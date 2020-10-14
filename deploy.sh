@@ -24,6 +24,8 @@ cd docs/.vuepress/dist
 # git add -A
 # git commit -m "${msg}"
 # git push -f $githubUrl main:gh-pages # 推送到github
+git config --global user.name "qixiaobro"
+git config --global user.email "982092690@qq.com"
 git init
 git add -A
 git commit -m 'deploy'
