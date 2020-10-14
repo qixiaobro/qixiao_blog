@@ -13,17 +13,17 @@ cd docs/.vuepress/dist
 # echo 'techfly.com' > CNAME
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
-  githubUrl=git@github.com:qixiaobro/qixiaobro.github.io.git
+  githubUrl=git@github.com:qixiaobro/qixiao_blog.git
 else
   msg='来自github actions的自动部署'
-  githubUrl=https://qixiaobro:${GITHUB_TOKEN}@github.com:qixiaobro/qixiaobro.github.io.git
+  githubUrl=https://qixiaobro:${GITHUB_TOKEN}@github.com/qixiaobro/qixiao_blog.git
   git config --global user.name "qixiaobro"
   git config --global user.email "982092690@qq.com"
 fi
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl master # 推送到github
+git push -f $githubUrl master:gh-pages # 推送到github
 
 # deploy to coding
 # echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME  # 自定义域名
