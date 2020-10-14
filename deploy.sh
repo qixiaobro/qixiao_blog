@@ -10,31 +10,26 @@ npm run build
 cd docs/.vuepress/dist
 
 # deploy to github
-echo 'techfly.com' > CNAME
-if [ -z "$GITHUB_TOKEN" ]; then
-  msg='deploy'
-  githubUrl=git@github.com:qixiaobro/qixiao_blog.git
-else
-  msg='来自github actions的自动部署'
-  githubUrl=https://qixiaobro:${GITHUB_TOKEN}@github.com:qixiaobro/qixiao_blog.git
-  git config --global user.name "qixiaobro"
-  git config --global user.email "982092690@qq.com"
-fi
+# echo 'techfly.com' > CNAME
+# if [ -z "$GITHUB_TOKEN" ]; then
+#   msg='deploy'
+#   githubUrl=git@github.com:qixiaobro/qixiao_blog.git
+# else
+#   msg='来自github actions的自动部署'
+#   githubUrl=https://qixiaobro:${GITHUB_TOKEN}@github.com:qixiaobro/qixiao_blog.git
+#   git config --global user.name "qixiaobro"
+#   git config --global user.email "982092690@qq.com"
+# fi
+# git init
+# git add -A
+# git commit -m "${msg}"
+# git push -f $githubUrl main:gh-pages # 推送到github
 git init
 git add -A
-git commit -m "${msg}"
-git push -f $githubUrl main:gh-pages # 推送到github
+git commit -m 'deploy'
 
-# deploy to coding
-echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME  # 自定义域名
-if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true；$CODING_TOKEN来自于github仓库`Settings/Secrets`设置的私密环境变量
-  codingUrl=git@e.coding.net:xgy/xgy.git
-else
-  codingUrl=https://HmuzsGrGQX:${CODING_TOKEN}@e.coding.net/xgy/xgy.git
-fi
-git add -A
-git commit -m "${msg}"
-git push -f $codingUrl master # 推送到coding
+# 如果发布到 https://<USERNAME>.github.io
+ git push -f git@github.com:qixiaobro/qixiaobro.github.io.git master
 
 cd - # 退回开始所在目录
 rm -rf docs/.vuepress/dist
