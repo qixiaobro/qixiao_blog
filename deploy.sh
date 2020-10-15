@@ -30,7 +30,7 @@ echo 'blog.techfly.top' > CNAME  # 自定义域名
 if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true；$CODING_TOKEN来自于github仓库`Settings/Secrets`设置的私密环境变量
   codingUrl=git@e.coding.net:qixiaobro/blog/blog.git
 else
-  codingUrl=https://bfiqSVaSrN:c5446b68bc47eea6a36f68e3e59c9ed4709ad28e@e.coding.net:qixiaobro/blog/blog.git
+  codingUrl=https://bfiqSVaSrN:c5446b68bc47eea6a36f68e3e59c9ed4709ad28e@e.coding.net/qixiaobro/blog/blog.git
 fi
 git add -A
 git commit -m "${msg}"
