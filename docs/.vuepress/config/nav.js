@@ -20,5 +20,9 @@ module.exports = [
     text: 'iOS开发',
     link: '/note/iOS/',
   },
+  {
+    text: 'About',
+    link: '/pages/458484/',
+  },
 ]
 
