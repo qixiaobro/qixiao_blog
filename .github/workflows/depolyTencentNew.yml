@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
-            # 本地.ssh文件下的 私钥id_rsa，存在secrets的TOKEN中
+            # 本地.ssh文件下的私钥id_rsa，存在secrets的TOKEN中
             SSH_PRIVATE_KEY: ${{ secrets.NEW_RSA_TOKEN }} 
             # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
             ARGS: "-avzr --delete" 
